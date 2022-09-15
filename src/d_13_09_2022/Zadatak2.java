@@ -1,8 +1,18 @@
 package d_13_09_2022;
 
+
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 public class Zadatak2 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 //		Maksimizirati prozor
 //		Ucitati stranicu https://s.bootsnipp.com/iframe/WaXlr
 //		Dohvatite dugmice za rejting kao listu. XPath za trazenje treba da bude preko id atributa i za ovo
@@ -12,6 +22,26 @@ public class Zadatak2 {
 //		Na kraju programa ugasite pretrazivac.
 
 
+		    System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+			WebDriver driver = new ChromeDriver();
+			driver.manage().window().maximize();
+
+			Scanner s = new Scanner(System.in);
+
+			driver.get("https://s.bootsnipp.com/iframe/WaXlr");
+			Thread.sleep(2000);
+
+			List<WebElement> zvezdice = driver.findElements(By.xpath("//button[contains(@id, 'rating-star-')]"));
+			System.out.print("Unesite broj zvezdica: ");
+			int brojZvezdica = s.nextInt()-1;
+
+			zvezdice.get(brojZvezdica).click();
+
+			s.close();
+			Thread.sleep(5000);
+			driver.quit();
+		
+		
 	}
 
 }

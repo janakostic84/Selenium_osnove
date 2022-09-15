@@ -1,5 +1,6 @@
 package d_13_09_2022;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -27,6 +28,24 @@ public class Zadatak3 {
 	   	 driver.manage().window().maximize();
 		
 		driver.get("https://www.tutorialrepublic.com/snippets/bootstrap/table-with-add-and-delete-row-feature.php");
+		
+		Thread.sleep(2000);
+
+			for (int i = 1; i < 6; i++) {
+				driver.findElement(By.xpath("//button[contains(@class, 'add-new')]")).click();
+				driver.findElement(By.id("name")).sendKeys("Jana Antic");
+				driver.findElement(By.id("department")).sendKeys("QA");
+				driver.findElement(By.id("phone")).sendKeys("(381)33648176");
+				driver.findElement(By.xpath("//table[contains(@class, 'table')]//tr[last()]/td/a")).click();
+				Thread.sleep(500);
+			}
+
+			Thread.sleep(5000);
+			driver.quit();
+		}
+		
+		
+		
 		
 		
 	}

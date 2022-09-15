@@ -40,9 +40,7 @@ public class Zadatak1 {
 	   	 
 	   	 driver.findElement(By.xpath("//*[@class = 'oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']")).click();
 	   	 
-	   	 //driver.findElement(By.xpath("//*[@id='userForm']/div[4]/div/button")).click();
-		 //driver.findElement(By.xpath("//*[@id='userForm']//*[@id='login']")).click();
-		 //driver.findElement(By.id("userForm")).findElement(By.id("login"));
+	   	
 	   	 Thread.sleep(5000);
 	   	 
 	   	driver.findElement(By.xpath("//*[@placeholder = 'Search']")).sendKeys("Me");
